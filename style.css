@@ -1,0 +1,409 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1rem;
+  min-height: 100%;
+}
+
+.grid-container > *
+ {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+  padding: 10px;
+
+}
+
+.header
+{
+  grid-area: header;
+  background-color: #264d00;
+}
+
+.navbar 
+{
+  grid-area: navbar;
+  background-color: #85e085;
+}
+
+.sidebar 
+{
+  grid-area: sidebar;
+  background-color: #fdcfcf;
+}
+
+.main 
+{
+  grid-area: main;
+  background-color: white;
+}
+
+.footer 
+{
+  grid-area: footer;
+  background-color: #264d00;
+}
+
+.grid-container 
+{
+  display: grid;
+  gap: 10px;
+  grid-template:
+    "header"  120px
+    "navbar"  50px
+    "main"    auto
+    
+    "footer"  auto;
+    .FotoHeder
+    {
+      object-fit: inherit;
+      width: 40%;
+      height: 100%;
+    } 
+    .Mapa
+    {
+      object-fit: inherit;
+      width: 100%;
+      height: 100%;
+    }
+    .Distritos
+    {
+      width: 100%;
+      height: 87%;
+    }
+    .accordion
+    {
+      text-align: left;
+      position: inherit;
+      top: 50%;
+      left: 50%;
+      margin: 5px;
+    }
+    .accordion li
+    {
+      width: 90%;
+    }
+    .carrousel{
+      height: 100%;
+      width: 90%;
+      padding: 0px 0px 0px 10%;
+    }
+
+}
+
+@media (min-width: 600px) 
+{
+  .grid-container {
+    grid-template:
+      "header  header" 100px
+      "navbar  navbar" 50px
+      "main  main"   auto
+      "footer  footer" auto /
+      200px    auto;
+    .FotoHeder
+    {
+      object-fit: inherit;
+      width: 25vw;
+      height: 50;
+    }
+    .Mapa
+    {
+      object-fit: inherit;
+      width: 100%;
+      height: 100%;
+    }
+    .Distritos
+    {
+      width: 100%;
+      height: 87%;
+      
+    }
+    .accordion
+    {
+      text-align: left;
+      position: inherit;
+      top: 50%;
+      left: 50%;
+      margin: 5px;
+    }
+    .accordion li
+    {
+      width: 90%;
+      height: auto;
+    }
+    .carrousel{
+      height: 100%;
+      width: 80%;
+      padding: 0px 0px 0px 15%;
+    }
+  }
+}
+@media (min-width: 900px)
+{
+  .grid-container 
+  {
+    grid-template:
+      "header  header header"  100px
+      
+      "navbar main   main" auto
+      "footer  footer footer"  auto /
+      200px    auto   200px;
+    .FotoHeder
+    {
+      object-fit: inherit;
+      width: 12vw;
+      height: 50;
+    }
+    .Mapa
+    {
+      object-fit: inherit;
+      width: 100%;
+      height: 100%;
+    }
+    .Distritos
+    {
+      width: 100%;
+      height: 87%;
+    }
+
+    .accordion
+    {
+      text-align: left;
+      position: inherit;
+      top: 50%;
+      left: 50%;
+      margin: px;
+    }
+    .accordion li
+    {
+      width: 98%;
+    }
+    .carrousel{
+      height: 100%;
+      width: 90%;
+      padding: 0px 0px 0px 15%;
+    }
+  }
+  
+}
+h1
+{
+  margin-left:auto ;
+}
+.FotoHeder
+{
+  float: left;
+  margin-right: 40px;
+  
+    grid-column: 1;
+  
+}
+.listaLugares
+{
+  margin-left: 5%;
+}
+.listaTransporte
+{
+  margin-left: 1%;
+  margin-right: 5px;
+}
+.marco
+{
+  margin : 0.5%;
+}
+.Mapa
+{
+  grid-column: 1;
+}
+.Distritos
+{
+  width: auto;
+  height: auto;
+
+}
+.divImajenes
+{
+  text-align: center; 
+  margin: 0 auto; 
+  display: block;
+}
+
+
+
+.accordion
+{
+  grid-column: 1;
+}
+.accordion li
+{
+    list-style: none;
+    
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background: #adebad;
+    box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+                -6px -6px 10px -1px rgba(255,255,255, 0.7);
+    
+}
+.accordion li label
+{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+label::before
+{
+    content: "+";
+    margin-right: 10px;
+    font-size: 24px;
+    font-weight: 600; 
+}
+input[type ="radio"]
+{
+    display: none;
+
+}
+.accordion .content
+{
+    color: black;
+    padding: 0 10px;
+    line-height: 26px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-heignt 0.5s,padding 0.5s;
+}
+.accordion input[type ="radio"]:checked + label + .content
+{
+    max-height: fit-content; 
+    padding: 10px 10px 20px;
+}
+.accordion input[type ="radio"]:checked + label ::before
+{
+    content: '-';
+}
+
+
+.conteCarrousel{
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.itemCarrousel{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.itemCarrouselTarjeta{
+  width: 100%;
+  height: 100%;
+}
+
+.itemCarrouselArrows{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px; 
+}
+
+.itemCarrouselArrows > i:hover {
+  cursor: pointer;
+}
+
+.conteCarrouselController{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.conteCarrouselController > a{
+  text-decoration: none;
+  font-size: 2em;
+  color: grey;
+}
+
+.itemCarrouselArrows > a > i{
+  color: white;
+}
+
+
+@keyframes square-in-bottom-left {
+  from {
+    clip-path: inset(0 0 100% 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="in:square:bottom-left"] {
+  animation: 2.5s cubic-bezier(.25, 1, .30, 1) square-in-bottom-left both;
+}
+
+
+
+.menu {
+  width: 900px;
+  margin: 0 auto;
+}
+
+img {
+  width: 120px;
+  height: 50px;
+  float: left;
+  padding: 8px;
+
+}
+
+nav {
+  float: right;
+}
+
+nav ul li {
+  list-style: none;
+  margin-left: 45px;
+  padding: 12px 0;
+  float: left;
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+}
+
+nav ul li a::before {
+  display: block;
+  content: '';
+  width: 0%;
+  background: #444;
+  height: 5px;
+  top:0;
+  position: absolute;
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::before {
+  width: 100%;
+}
